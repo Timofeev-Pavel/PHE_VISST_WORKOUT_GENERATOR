@@ -1,9 +1,11 @@
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic styling for the body */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
@@ -15,17 +17,19 @@ body {
     margin: 0;
 }
 
+/* Styling for the container */
 .container {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 600px;
+    max-width: 500px; /* Adjusted for a cozier look */
     width: 100%;
     text-align: center;
     padding: 20px;
 }
 
+/* Header styling */
 header {
     background-color: #751bd6;
     color: white;
@@ -33,32 +37,33 @@ header {
     border-radius: 10px 10px 0 0;
     display: flex;
     align-items: center;
-    position: relative; /* Allows positioning of title */
+    position: relative;
 }
 
 header .logo {
-    flex: 0 0 auto; /* Prevent logo from growing */
+    flex: 0 0 auto;
 }
 
 header .logo img {
-    height: 50px; /* Adjust as needed */
+    height: 50px;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Slightly smaller for a cozier look */
     margin: 0;
-    position: absolute; /* Absolute positioning */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+/* Main section styling */
 main {
     padding: 20px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
+/* Form styling */
+form {
+    margin-top: 20px;
 }
 
 label {
@@ -67,12 +72,15 @@ label {
     margin-bottom: 5px;
 }
 
+input[type="text"],
+input[type="number"],
 select {
-    width: 100%;
+    width: calc(100% - 22px); /* Adjusted width for better fit */
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    margin-bottom: 15px; /* Space between fields */
 }
 
 button {
@@ -90,31 +98,122 @@ button:hover {
     background-color: #5a05c8;
 }
 
+/* Workout list styling */
 .workout-list ul {
-    list-style-type: none; /* Remove default list bullets */
+    list-style-type: none;
     padding: 0;
 }
 
 .workout-list li {
-    font-size: 1.1rem; /* Slightly larger text for better readability */
-    margin: 10px 0; /* Space between items */
+    font-size: 1.1rem;
+    margin: 10px 0;
     padding: 10px;
-    border-bottom: 1px solid #ddd; /* Light border between items */
+    border-bottom: 1px solid #ddd;
 }
 
 .workout-list a {
-    color: #6706e9; /* Matching link color with the header */
-    text-decoration: none; /* Remove underline */
+    color: #6706e9;
+    text-decoration: none;
 }
 
 .workout-list a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
+/* Timer display styling */
+.timer-display {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+
+/* Footer styling */
 footer {
     background-color: #ecf0f1;
     padding: 10px;
     border-radius: 0 0 10px 10px;
     font-size: 0.9rem;
     color: #7f8c8d;
+}
+
+/* Additional styles for personal information page */
+.personal-info-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personal-info-form label {
+    margin-bottom: 10px;
+}
+
+.personal-info-form input {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+}
+
+.personal-info-form button {
+    width: 100%;
+    max-width: 200px; /* Center button and control size */
+    margin-top: 10px;
+}
+
+/* Styles for the welcoming page */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.welcome-container header {
+    background-color: #751bd6;
+    color: white;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.welcome-container main {
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.welcome-container form {
+    margin-top: 20px;
+}
+
+.welcome-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.welcome-container input[type="text"],
+.welcome-container input[type="number"] {
+    width: calc(100% - 22px); /* Adjusted width for better fit */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Space between fields */
+}
+
+.welcome-container button {
+    background-color: #6706e9;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-container button:hover {
+    background-color: #5a05c8;
 }
