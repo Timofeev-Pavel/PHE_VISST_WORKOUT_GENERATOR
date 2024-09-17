@@ -11,21 +11,34 @@
     <div class="container">
         <header>
             <h1>Health & Wellbeing</h1>
-            <p>Promoting a healthier lifestyle at VISST</p>
+            <p>Find the right workout for you!</p>
         </header>
-
         <main>
-            <div class="content">
-                <h2>Get Your Daily Health Tip</h2>
-                <button id="checkStatus">Click Here</button>
-                <div id="tip"></div>
+            <div class="form-group">
+                <label for="time">How much time do you have?</label>
+                <select id="time">
+                    <option value="15">15 minutes</option>
+                    <option value="30">30 minutes</option>
+                    <option value="60">1 hour</option>
+                    <option value="90">1.5 hours</option>
+                </select>
             </div>
+            <div class="form-group">
+                <label for="goal">Which area would you like to improve?</label>
+                <select id="goal">
+                    <option value="strength">Strength</option>
+                    <option value="cardio">Cardio</option>
+                    <option value="flexibility">Flexibility</option>
+                    <option value="endurance">Endurance</option>
+                </select>
+            </div>
+            <button onclick="suggestWorkout()">Get Workout Suggestion</button>
+            <div id="workout" class="workout"></div>
         </main>
-
         <footer>
-            <p>&copy; 2024 Health & Wellbeing Initiative | VISST</p>
+            <p>&copy; 2024 Health & Wellbeing. All rights reserved.</p>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="workoutGenerator.js"></script>
 </body>
 </html>
