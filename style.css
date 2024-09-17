@@ -27,19 +27,29 @@ body {
 }
 
 header {
-    background-color: #6706e9;
+    background-color: #751ad9;
     color: white;
     padding: 20px;
     border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    position: relative; /* Allows positioning of title */
+}
+
+header .logo {
+    flex: 0 0 auto; /* Prevent logo from growing */
+}
+
+header .logo img {
+    height: 50px; /* Adjust as needed */
 }
 
 header h1 {
     font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1rem;
+    margin: 0;
+    position: absolute; /* Absolute positioning */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
 }
 
 main {
@@ -80,11 +90,25 @@ button:hover {
     background-color: #5a05c8;
 }
 
-.workout {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #333;
-    text-align: left;
+.workout-list ul {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0;
+}
+
+.workout-list li {
+    font-size: 1.1rem; /* Slightly larger text for better readability */
+    margin: 10px 0; /* Space between items */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Light border between items */
+}
+
+.workout-list a {
+    color: #6706e9; /* Matching link color with the header */
+    text-decoration: none; /* Remove underline */
+}
+
+.workout-list a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 footer {

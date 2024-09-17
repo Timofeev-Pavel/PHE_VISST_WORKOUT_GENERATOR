@@ -9,6 +9,9 @@
 <body>
     <div class="container">
         <header>
+            <div class="logo">
+                <img src="logo.png" alt="VISST Logo">
+            </div>
             <h1>Workout Generator</h1>
         </header>
         <main>
@@ -24,18 +27,17 @@
             <label for="area">Which area to improve?</label>
             <select id="area">
                 <option value="cardio">Cardio</option>
-                    <option value="upperbody">Upper Body</option>
-                    <option value="lowerbody">Lower Body</option>
-                </select>
-                <br><br>
-                <button onclick="generateWorkout()">Generate Workout</button>
-                <div id="workout"></div>
-            </main>
-            <footer>
-                <p>Workout Generator - Stay Fit and Healthy!</p>
-            </footer>
-        </div>
-        <script src="workoutGenerator.js"></script>
-    </body>
-    </html>
-    
+                <option value="upperbody">Upper Body</option>
+                <option value="lowerbody">Lower Body</option>
+            </select>
+            <br><br>
+            <button onclick="generateWorkout()">Generate Workout</button>
+            <div id="workout" class="workout-list"></div>
+        </main>
+        <footer>
+            <p>Workout Generator - Stay Fit and Healthy!</p>
+        </footer>
+    </div>
+    <script src="workoutGenerator.js"></script>
+</body>
+</html>
