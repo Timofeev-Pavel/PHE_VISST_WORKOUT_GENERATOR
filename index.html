@@ -3,42 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health & Wellbeing Project</title>
+    <title>Workout Generator</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Health & Wellbeing</h1>
-            <p>Find the right workout for you!</p>
+            <h1>Workout Generator</h1>
         </header>
         <main>
-            <div class="form-group">
-                <label for="time">How much time do you have?</label>
-                <select id="time">
-                    <option value="15">15 minutes</option>
-                    <option value="30">30 minutes</option>
-                    <option value="60">1 hour</option>
-                    <option value="90">1.5 hours</option>
+            <h2>Customize Your Workout</h2>
+            <label for="time">How much time do you have?</label>
+            <select id="time">
+                <option value="5">5 min</option>
+                <option value="10">10 min</option>
+                <option value="15">15 min</option>
+                <option value="30">30 min</option>
+            </select>
+            <br>
+            <label for="area">Which area to improve?</label>
+            <select id="area">
+                <option value="cardio">Cardio</option>
+                    <option value="upperbody">Upper Body</option>
+                    <option value="lowerbody">Lower Body</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="goal">Which area would you like to improve?</label>
-                <select id="goal">
-                    <option value="strength">Strength</option>
-                    <option value="cardio">Cardio</option>
-                    <option value="flexibility">Flexibility</option>
-                    <option value="endurance">Endurance</option>
-                </select>
-            </div>
-            <button onclick="suggestWorkout()">Get Workout Suggestion</button>
-            <div id="workout" class="workout"></div>
-        </main>
-        <footer>
-            <p>&copy; 2024 Health & Wellbeing. All rights reserved.</p>
-        </footer>
-    </div>
-    <script src="workoutGenerator.js"></script>
-</body>
-</html>
+                <br><br>
+                <button onclick="generateWorkout()">Generate Workout</button>
+                <div id="workout"></div>
+            </main>
+            <footer>
+                <p>Workout Generator - Stay Fit and Healthy!</p>
+            </footer>
+        </div>
+        <script src="workoutGenerator.js"></script>
+    </body>
+    </html>
+    

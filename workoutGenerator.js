@@ -1,49 +1,83 @@
-function suggestWorkout() {
+function generateWorkout() {
     const time = document.getElementById('time').value;
-    const goal = document.getElementById('goal').value;
+    const area = document.getElementById('area').value;
+
     let workout = '';
 
-    if (time == '15') {
-        if (goal == 'strength') {
-            workout = 'Quick bodyweight circuit: push-ups, squats, and lunges.';
-        } else if (goal == 'cardio') {
-            workout = 'High-intensity interval training: jumping jacks, burpees, and sprints.';
-        } else if (goal == 'flexibility') {
-            workout = '15-minute stretching routine focusing on major muscle groups.';
-        } else if (goal == 'endurance') {
-            workout = '15-minute run or brisk walk with intervals.';
+    // Example workouts based on time and area
+    if (area === 'cardio') {
+        workout = `<ul>`;
+        if (time === '5') {
+            workout += `<li>Jumping Jacks - 15 reps <br> Video: <a href="https://www.youtube.com/watch?v=I4y7d7t0UlM" target="_blank">Link</a></li>
+                        <li>Mountain Climbers - 15 reps <br> Video: <a href="https://www.youtube.com/watch?v=HI_kI8Lnu2Y" target="_blank">Link</a></li>
+                        <li>Burpees - 10 reps <br> Video: <a href="https://www.youtube.com/watch?v=GQfGuoGeSyI" target="_blank">Link</a></li>
+                        <li>Rest - 1 min</li>`;
+        } else if (time === '10') {
+            workout += `<li>Jumping Jacks - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=I4y7d7t0UlM" target="_blank">Link</a></li>
+                        <li>Mountain Climbers - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=HI_kI8Lnu2Y" target="_blank">Link</a></li>
+                        <li>Burpees - 20 reps <br> Video: <a href="https://www.youtube.com/watch?v=GQfGuoGeSyI" target="_blank">Link</a></li>
+                        <li>Rest - 2 min</li>`;
+        } else if (time === '15') {
+            workout += `<li>Jumping Jacks - 45 reps <br> Video: <a href="https://www.youtube.com/watch?v=I4y7d7t0UlM" target="_blank">Link</a></li>
+                        <li>Mountain Climbers - 45 reps <br> Video: <a href="https://www.youtube.com/watch?v=HI_kI8Lnu2Y" target="_blank">Link</a></li>
+                        <li>Burpees - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=GQfGuoGeSyI" target="_blank">Link</a></li>
+                        <li>Rest - 3 min</li>`;
+        } else if (time === '30') {
+            workout += `<li>Jumping Jacks - 60 reps <br> Video: <a href="https://www.youtube.com/watch?v=I4y7d7t0UlM" target="_blank">Link</a></li>
+                        <li>Mountain Climbers - 60 reps <br> Video: <a href="https://www.youtube.com/watch?v=HI_kI8Lnu2Y" target="_blank">Link</a></li>
+                        <li>Burpees - 40 reps <br> Video: <a href="https://www.youtube.com/watch?v=GQfGuoGeSyI" target="_blank">Link</a></li>
+                        <li>Rest - 5 min</li>`;
         }
-    } else if (time == '30') {
-        if (goal == 'strength') {
-            workout = '30-minute workout including weights or resistance bands focusing on major muscle groups.';
-        } else if (goal == 'cardio') {
-            workout = '30-minute cardio workout: running, cycling, or swimming.';
-        } else if (goal == 'flexibility') {
-            workout = '30-minute yoga session focusing on flexibility and relaxation.';
-        } else if (goal == 'endurance') {
-            workout = '30-minute run or cycling with steady pace and intervals.';
+        workout += `</ul>`;
+    } else if (area === 'upperbody') {
+        workout = `<ul>`;
+        if (time === '5') {
+            workout += `<li>Push-ups - 10 reps <br> Video: <a href="https://www.youtube.com/watch?v=qpcBos-EUug" target="_blank">Link</a></li>
+                        <li>Tricep Dips - 10 reps <br> Video: <a href="https://www.youtube.com/watch?v=76l0naafkgA" target="_blank">Link</a></li>
+                        <li>Shoulder Taps - 10 reps <br> Video: <a href="#" target="_blank">Link</a></li>
+                        <li>Rest - 1 min</li>`;
+        } else if (time === '10') {
+            workout += `<li>Push-ups - 20 reps <br> Video: <a href="https://www.youtube.com/watch?v=qpcBos-EUug" target="_blank">Link</a></li>
+                        <li>Tricep Dips - 20 reps <br> Video: <a href="https://www.youtube.com/watch?v=76l0naafkgA" target="_blank">Link</a></li>
+                        <li>Shoulder Taps - 20 reps <br> Video: <a href="https://www.youtube.com/watch?v=8rgurWd-PB8" target="_blank">Link</a></li>
+                        <li>Rest - 2 min</li>`;
+        } else if (time === '15') {
+            workout += `<li>Push-ups - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=qpcBos-EUug" target="_blank">Link</a></li>
+                        <li>Tricep Dips - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=76l0naafkgA" target="_blank">Link</a></li>
+                        <li>Shoulder Taps - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=8rgurWd-PB8" target="_blank">Link</a></li>
+                        <li>Rest - 3 min</li>`;
+        } else if (time === '30') {
+            workout += `<li>Push-ups - 40 reps <br> Video: <a href="https://www.youtube.com/watch?v=qpcBos-EUug" target="_blank">Link</a></li>
+                        <li>Tricep Dips - 40 reps <br> Video: <a href="https://www.youtube.com/watch?v=76l0naafkgA" target="_blank">Link</a></li>
+                        <li>Shoulder Taps - 40 reps <br> Video: <a href="https://www.youtube.com/watch?v=8rgurWd-PB8" target="_blank">Link</a></li>
+                        <li>Rest - 5 min</li>`;
         }
-    } else if (time == '60') {
-        if (goal == 'strength') {
-            workout = 'Full-body workout with weights or resistance bands, including warm-up and cool-down.';
-        } else if (goal == 'cardio') {
-            workout = '60-minute cardio workout with varied intensity: running, cycling, or swimming.';
-        } else if (goal == 'flexibility') {
-            workout = '60-minute yoga or stretching session focusing on flexibility and breathing.';
-        } else if (goal == 'endurance') {
-            workout = '60-minute endurance workout: long run or bike ride with intervals.';
+        workout += `</ul>`;
+    } else if (area === 'lowerbody') {
+        workout = `<ul>`;
+        if (time === '5') {
+            workout += `<li>Squats - 15 reps <br> Video: <a href="https://www.youtube.com/watch?v=m0GcZ24pK6k" target="_blank">Link</a></li>
+                        <li>Lunges - 10 reps per leg <br> Video: <a href="https://www.youtube.com/watch?v=MxfTNXSFiYI" target="_blank">Link</a></li>
+                        <li>Calf Raises - 15 reps <br> Video: <a href="https://www.youtube.com/watch?v=UV8gOrHmuKc" target="_blank">Link</a></li>
+                        <li>Rest - 1 min</li>`;
+        } else if (time === '10') {
+            workout += `<li>Squats - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=m0GcZ24pK6k" target="_blank">Link</a></li>
+                        <li>Lunges - 20 reps per leg <br> Video: <a href="https://www.youtube.com/watch?v=MxfTNXSFiYI" target="_blank">Link</a></li>
+                        <li>Calf Raises - 30 reps <br> Video: <a href="https://www.youtube.com/watch?v=UV8gOrHmuKc" target="_blank">Link</a></li>
+                        <li>Rest - 2 min</li>`;
+        } else if (time === '15') {
+            workout += `<li>Squats - 45 reps <br> Video: <a href="https://www.youtube.com/watch?v=m0GcZ24pK6k" target="_blank">Link</a></li>
+                        <li>Lunges - 30 reps per leg <br> Video: <a href="https://www.youtube.com/watch?v=MxfTNXSFiYI" target="_blank">Link</a></li>
+                        <li>Calf Raises - 45 reps <br> Video: <a href="https://www.youtube.com/watch?v=UV8gOrHmuKc" target="_blank">Link</a></li>
+                        <li>Rest - 3 min</li>`;
+        } else if (time === '30') {
+            workout += `<li>Squats - 60 reps <br> Video: <a href="https://www.youtube.com/watch?v=m0GcZ24pK6k" target="_blank">Link</a></li>
+                        <li>Lunges - 40 reps per leg <br> Video: <a href="https://www.youtube.com/watch?v=MxfTNXSFiYI" target="_blank">Link</a></li>
+                        <li>Calf Raises - 60 reps <br> Video: <a href="https://www.youtube.com/watch?v=UV8gOrHmuKc" target="_blank">Link</a></li>
+                        <li>Rest - 5 min</li>`;
         }
-    } else if (time == '90') {
-        if (goal == 'strength') {
-            workout = 'Comprehensive strength training session with different exercises targeting all muscle groups.';
-        } else if (goal == 'cardio') {
-            workout = '90-minute cardio session with varied intensity and types of exercises.';
-        } else if (goal == 'flexibility') {
-            workout = 'Extended yoga session focusing on flexibility, balance, and relaxation.';
-        } else if (goal == 'endurance') {
-            workout = '90-minute endurance workout: long-distance run or bike ride with intervals.';
-        }
+        workout += `</ul>`;
     }
 
-    document.getElementById('workout').textContent = workout;
+    document.getElementById('workout').innerHTML = workout;
 }

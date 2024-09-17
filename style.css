@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #e9f5f5; /* Light gray background */
-    color: #333; /* Dark gray text color */
+    background-color: #f4f4f4;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,14 +20,15 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
     text-align: center;
+    padding: 20px;
 }
 
 header {
-    background-color: #6706e9; /* Purple */
-    color: white; /* White text color */
+    background-color: #6706e9;
+    color: white;
     padding: 20px;
     border-radius: 10px 10px 0 0;
 }
@@ -45,15 +46,28 @@ main {
     padding: 20px;
 }
 
-main .content h2 {
-    font-size: 1.5rem;
+.form-group {
     margin-bottom: 20px;
-    color: #6706e9; /* Purple */
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 button {
-    background-color: #008080; /* Teal */
-    color: white; /* White text color */
+    background-color: #6706e9;
+    color: white;
     font-size: 1rem;
     padding: 10px 20px;
     border: none;
@@ -63,21 +77,20 @@ button {
 }
 
 button:hover {
-    background-color: #004d4d; /* Darker teal for hover effect */
+    background-color: #5a05c8;
 }
 
-#tip {
+.workout {
     margin-top: 20px;
     font-size: 1.2rem;
-    color: #6706e9; /* Purple */
-    font-weight: bold;
-    min-height: 40px;
+    color: #333;
+    text-align: left;
 }
 
 footer {
-    background-color: #f0f0f0; /* Light gray */
+    background-color: #ecf0f1;
     padding: 10px;
     border-radius: 0 0 10px 10px;
     font-size: 0.9rem;
-    color: #333; /* Dark gray text color */
+    color: #7f8c8d;
 }
