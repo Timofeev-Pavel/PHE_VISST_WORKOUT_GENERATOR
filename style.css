@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e9f5f5; /* Light gray background */
+    color: #333; /* Dark gray text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    background-color: #6706e9; /* Purple */
+    color: white; /* White text color */
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+main {
+    padding: 20px;
+}
+
+main .content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #6706e9; /* Purple */
+}
+
+button {
+    background-color: #008080; /* Teal */
+    color: white; /* White text color */
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d4d; /* Darker teal for hover effect */
+}
+
+#tip {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #6706e9; /* Purple */
+    font-weight: bold;
+    min-height: 40px;
+}
+
+footer {
+    background-color: #f0f0f0; /* Light gray */
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.9rem;
+    color: #333; /* Dark gray text color */
+}
