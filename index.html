@@ -19,19 +19,38 @@
     </div>
     <script>
         document.getElementById('personal-info-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const age = document.getElementById('age').value;
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
 
-            if (name && age) {
-                // Save user data to local storage
-                localStorage.setItem('userName', name);
-                localStorage.setItem('userAge', age);
-                
-                // Redirect to workout generator page
-                window.location.href = 'workoutGenerator.html';
-            }
-        });
+    if (name && age) {
+        const data = {
+            name: name,
+            age: age,
+            time: document.getElementById('time').value,
+            area: document.getElementById('area').value
+        };
+
+        // Send data to Google Sheets via the Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbzbuuQ25SgXfSgDSQOw0v9kAL6zRw14LhaPWKxl1a9x0GvppLpYpCVhNQTVu5c1cdMU/exec', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
+            // Optionally redirect or display a success message
+            window.location.href = 'thankYou.html';
+        })
+        .catch(error => console.error('Error:', error));
+    }
+});
+
     </script>
 </body>
 </html>
