@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Redirect to personal info page if not already on it
-            if (window.location.pathname !== '/index.html') {
-                window.location.href = 'index.html';
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <p>Please enter your personal information.</p>
-    <button onclick="window.location.href='index.html'">Go to Form</button>
+    <div class="container">
+        <header>
+            <h1>Welcome to the Workout Generator!</h1>
+        </header>
+        <main>
+            <form id="welcome-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2024 Workout Generator</p>
+        </footer>
+    </div>
+    <script src="welcome.js"></script>
 </body>
 </html>
