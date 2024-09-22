@@ -27,7 +27,7 @@ function generateWorkout() {
     const time = parseInt(document.getElementById('time').value);
     const area = document.getElementById('area').value;
 
-    const workouts = {
+    const WORKOUT_REPOSITORY = {
         cardio: {
             5: [
                 { name: 'Jumping Jacks', link: 'https://example.com/jumping-jacks', reps: '2 sets of 20' },
@@ -93,11 +93,22 @@ function generateWorkout() {
         }
     };
 
-    const selectedWorkouts = workouts[area][time];
+    const selectedWorkouts = WORKOUT_REPOSITORY[area][time];
     const workoutList = document.getElementById('workout');
     workoutList.innerHTML = `<h3>Workout for ${time} minutes</h3>`;
     
     selectedWorkouts.forEach(exercise => {
-        workoutList.innerHTML += `<p><a href="${exercise.link}" target="_blank">${exercise.name}</a> - ${exercise.reps}</p>`;
+        workoutList.innerHTML += `
+        <p>
+        <label>
+          <input type="checkbox" id="${exercise.name}" name="workout" value="${exercise.name}">
+          <a href="${exercise.link}" target="_blank">${exercise.name}</a> - ${exercise.reps}
+        </label>
+      </p>`;  
     });
+
+    // Store area and time in hidden inputs
+    document.getElementById('selected-area').value = area;
+    document.getElementById('selected-time').value = time;
+
 }

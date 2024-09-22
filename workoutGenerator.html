@@ -14,6 +14,9 @@
             </div>
             <h1>Workout Generator</h1>
         </header>
+        <input type="hidden" id="selected-area" name="area">
+        <input type="hidden" id="selected-time" name="time">
+
         <main>
             <h2>Customize Your Workout</h2>
             <label for="time">How much time do you have?</label>
@@ -33,10 +36,51 @@
             <br><br>
             <button onclick="generateWorkout()">Generate Workout</button>
             <div id="workout" class="workout-list"></div>
-            <div class="timer-display">
-                <span id="timer">00:00</span>
-                <button onclick="startTimer()">Start Timer</button>
-            </div>
+            <br><br>
+            <h3>Submit Data</h1>
+    
+            <form id="dataForm">
+                <button type="submit" id="submitBtn">Submit Data</button>
+            </form>
+
+            
+
+            <script>
+                document.getElementById("dataForm").addEventListener("submit", async function(e) {
+                    e.preventDefault();  // Prevent default form submission
+                    
+                    // Get input values
+                    const name = localStorage.getItem('userName');
+                    const age = localStorage.getItem('userAge');
+                    const area = document.getElementById('selected-area').value;
+                    const time = document.getElementById('selected-time').value;
+
+                    const SCRIPT_ID = '1jV55hSE4iwpJjYAgT8rh11EuzEDPYSi5LzDJnPGdOVlKY-ogPdgewOAj';
+        
+                    // Web App URL from Google Apps Script
+                    const scriptURL = `https://script.google.com/macros/s/${SCRIPT_ID}/exec`;
+        
+                    try {
+                    // Send data as a POST request to Google Apps Script
+                    const response = await fetch(scriptURL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name: name, age: age, area: area, time: time })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const result = await response.json();
+                    console.log(result);  // Handle the response if needed
+
+                    } catch (error) {
+                        console.error('There was a problem with the fetch operation:', error);
+                    }
+                });
+            </script>
+
         </main>
         <footer>
             <p>Workout Generator - Stay Fit and Healthy!</p>
