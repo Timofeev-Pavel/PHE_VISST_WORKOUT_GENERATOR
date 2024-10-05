@@ -14,11 +14,15 @@
             </div>
             <h1>Workout Generator</h1>
         </header>
+
+        <!-- Hidden inputs to store selected area and time -->
         <input type="hidden" id="selected-area" name="area">
         <input type="hidden" id="selected-time" name="time">
 
         <main>
             <h2>Customize Your Workout</h2>
+
+            <!-- Time selection dropdown -->
             <label for="time">How much time do you have?</label>
             <select id="time">
                 <option value="5">5 min</option>
@@ -26,66 +30,75 @@
                 <option value="15">15 min</option>
                 <option value="30">30 min</option>
             </select>
+
             <br>
+
+            <!-- Area selection dropdown -->
             <label for="area">Which area to improve?</label>
             <select id="area">
                 <option value="cardio">Cardio</option>
                 <option value="upperbody">Upper Body</option>
                 <option value="lowerbody">Lower Body</option>
             </select>
+
             <br><br>
+
+            <!-- Generate Workout button -->
             <button onclick="generateWorkout()">Generate Workout</button>
+
+            <!-- Workout list placeholder -->
             <div id="workout" class="workout-list"></div>
+
             <br><br>
-            <h3>Submit Data</h1>
-    
+
+            <!-- Form to submit data -->
+            <h3>Submit Data</h3>
             <form id="dataForm">
                 <button type="submit" id="submitBtn">Submit Data</button>
             </form>
-
-            
-
-            <script>
-                document.getElementById("dataForm").addEventListener("submit", async function(e) {
-                    e.preventDefault();  // Prevent default form submission
-                    
-                    // Get input values
-                    const name = localStorage.getItem('userName');
-                    const age = localStorage.getItem('userAge');
-                    const area = document.getElementById('selected-area').value;
-                    const time = document.getElementById('selected-time').value;
-
-                    const SCRIPT_ID = '1jV55hSE4iwpJjYAgT8rh11EuzEDPYSi5LzDJnPGdOVlKY-ogPdgewOAj';
-        
-                    // Web App URL from Google Apps Script
-                    const scriptURL = `https://script.google.com/macros/s/${SCRIPT_ID}/exec`;
-        
-                    try {
-                    // Send data as a POST request to Google Apps Script
-                    const response = await fetch(scriptURL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name: name, age: age, area: area, time: time })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-
-                    const result = await response.json();
-                    console.log(result);  // Handle the response if needed
-
-                    } catch (error) {
-                        console.error('There was a problem with the fetch operation:', error);
-                    }
-                });
-            </script>
-
         </main>
+
         <footer>
             <p>Workout Generator - Stay Fit and Healthy!</p>
         </footer>
     </div>
+
     <script src="workoutGenerator.js"></script>
+    <script>
+        
+
+        const SCRIPT_ID = 'AKfycbwDsofIKh-yA_fBnMxkII2dafX763PKNLjmmcl-R-Dv1_BV8xF5RkzH3D8Qs0imvJQoEw';
+        const scriptURL = `https://script.google.com/macros/s/${SCRIPT_ID}/exec`; 
+
+        // Form submission handler
+        document.getElementById("dataForm").addEventListener("submit", async function(e) {
+        e.preventDefault();  // Prevent default form submission
+
+        // Get input values
+        const name = localStorage.getItem('userName') || 'defaultName';
+        const age = localStorage.getItem('userAge') || 'defaultAge';
+        const area = document.getElementById('selected-area').value;
+        const time = document.getElementById('selected-time').value;
+
+        try {
+            const response = await fetch('http://localhost:3000/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, age, area, time })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            console.log(result);
+
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
+    });
+
+    </script>
 </body>
 </html>

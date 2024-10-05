@@ -1,37 +1,14 @@
-// Timer logic
-let timer;
-function startTimer() {
-    const time = parseInt(document.getElementById('time').value) * 60; // Convert minutes to seconds
-    const timerDisplay = document.getElementById('timer');
-    let remainingTime = time;
-    
-    function updateDisplay() {
-        const minutes = Math.floor(remainingTime / 60);
-        const seconds = remainingTime % 60;
-        timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    }
-    
-    updateDisplay();
-    
-    timer = setInterval(() => {
-        remainingTime--;
-        updateDisplay();
-        if (remainingTime <= 0) {
-            clearInterval(timer);
-            window.location.href = 'thankYou.html';
-        }
-    }, 1000);
-}
-
 function generateWorkout() {
     const time = parseInt(document.getElementById('time').value);
     const area = document.getElementById('area').value;
-
+    const workoutList = document.getElementById('workout');
+    
+    // Define the workout repository
     const WORKOUT_REPOSITORY = {
         cardio: {
             5: [
                 { name: 'Jumping Jacks', link: 'https://example.com/jumping-jacks', reps: '2 sets of 20' },
-                { name: 'Running in Place', link: 'https://example.com/running-in-place', reps: '3 minutes' },
+                { name: 'Running in Place', link: 'https://example.com/running-in-place', reps: '3 minutes' }
             ],
             10: [
                 { name: 'Jumping Jacks', link: 'https://example.com/jumping-jacks', reps: '3 sets of 20' },
@@ -93,22 +70,30 @@ function generateWorkout() {
         }
     };
 
+    // Check if the selected area and time exist in the repository
+    if (!WORKOUT_REPOSITORY[area] || !WORKOUT_REPOSITORY[area][time]) {
+        workoutList.innerHTML = `<p>No workout found for ${area} with ${time} minutes. Please try another combination.</p>`;
+        return;
+    }
+
     const selectedWorkouts = WORKOUT_REPOSITORY[area][time];
-    const workoutList = document.getElementById('workout');
-    workoutList.innerHTML = `<h3>Workout for ${time} minutes</h3>`;
     
-    selectedWorkouts.forEach(exercise => {
-        workoutList.innerHTML += `
+    // Clear the previous workout list
+    workoutList.innerHTML = `<h3>Workout for ${time} minutes (${area} focus)</h3>`;
+    
+    // Dynamically generate the workout list
+    const workoutItems = selectedWorkouts.map(exercise => `
         <p>
-        <label>
-          <input type="checkbox" id="${exercise.name}" name="workout" value="${exercise.name}">
-          <a href="${exercise.link}" target="_blank">${exercise.name}</a> - ${exercise.reps}
-        </label>
-      </p>`;  
-    });
+            <label>
+                <input type="checkbox" id="${exercise.name}" name="workout" value="${exercise.name}" />
+                <a href="${exercise.link}" target="_blank">${exercise.name}</a> - ${exercise.reps}
+            </label>
+        </p>
+    `).join('');
+    
+    workoutList.innerHTML += workoutItems;
 
     // Store area and time in hidden inputs
     document.getElementById('selected-area').value = area;
     document.getElementById('selected-time').value = time;
-
 }
