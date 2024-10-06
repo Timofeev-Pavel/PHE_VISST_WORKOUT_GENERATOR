@@ -19,7 +19,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', async(req, res) => {
-  "hello";
+  console.log("you visited my ddb server")
+  return "hello";
 })
 
 // MongoDB client
