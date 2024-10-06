@@ -4,14 +4,13 @@ const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Используем PORT из окружения или 3000 по умолчанию
+const PORT = process.env.PORT || 3000;
 
 // MongoDB connection URI
-const uri = 'mongodb://127.0.0.1:27017/workoutDB'
-//'mongodb+srv://pavtim127:<n3oxzz1542>@cluster0.alxle.mongodb.net/';
+const uri = process.env.MONGODB_URI;
 
 if (!uri) {
-    console.error('MongoDB URI не установлен');
+    console.error('MongoDB URI is required to connect to DB');
     process.exit(1);
 }
 
@@ -24,8 +23,8 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
   
 // Connect to MongoDB
 client.connect().then(() => {
-    const db = client.db('test'); // Название вашей базы данных
-    const collection = db.collection('users'); // Название вашей коллекции
+    const db = client.db('phe_10_users_workouts');
+    const collection = db.collection('users');
 
     // Endpoint для обработки отправки формы
     app.post('/submit', async (req, res) => {
