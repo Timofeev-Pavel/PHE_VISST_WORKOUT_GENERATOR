@@ -7,7 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Используем PORT из окружения или 3000 по умолчанию
 
 // MongoDB connection URI
-const uri = 'mongodb+srv://pavtim127:<n3oxzz1542>@cluster0.alxle.mongodb.net/';
+const uri = 'mongodb://127.0.0.1:27017/workoutDB'
+//'mongodb+srv://pavtim127:<n3oxzz1542>@cluster0.alxle.mongodb.net/';
 
 if (!uri) {
     console.error('MongoDB URI не установлен');
@@ -20,7 +21,7 @@ app.use(bodyParser.json());
 
 // MongoDB client
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+  
 // Connect to MongoDB
 client.connect().then(() => {
     const db = client.db('test'); // Название вашей базы данных
