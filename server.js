@@ -18,6 +18,10 @@ if (!uri) {
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/', async(req, res) => {
+  "hello";
+})
+
 // MongoDB client
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
   
