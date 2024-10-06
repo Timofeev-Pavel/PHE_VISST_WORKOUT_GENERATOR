@@ -2,11 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
+
 const app = express();
 const PORT = process.env.PORT || 3000; // Используем PORT из окружения или 3000 по умолчанию
 
 // MongoDB connection URI
-const uri = process.env.MONGODB_URI 
+const uri = process.env.MONGODB_URI;
+
+if (!uri) {
+    console.error('MongoDB URI не установлен');
+    process.exit(1);
+}
 
 // Middleware
 app.use(cors());
@@ -38,4 +44,11 @@ client.connect().then(() => {
     });
 }).catch(err => {
     console.error('Failed to connect to MongoDB:', err);
+});
+
+// Закрываем соединение с MongoDB при завершении приложения
+process.on('SIGINT', async () => {
+    await client.close();
+    console.log('MongoDB connection closed');
+    process.exit(0);
 });
