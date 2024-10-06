@@ -65,39 +65,51 @@
 
     <script src="workoutGenerator.js"></script>
     <script>
-        
+        // Обновление скрытых полей при выборе времени
+    document.getElementById('time').addEventListener('change', function() {
+        document.getElementById('selected-time').value = this.value;
+    });
 
-        const SCRIPT_ID = 'AKfycbwDsofIKh-yA_fBnMxkII2dafX763PKNLjmmcl-R-Dv1_BV8xF5RkzH3D8Qs0imvJQoEw';
-        const scriptURL = `https://script.google.com/macros/s/${SCRIPT_ID}/exec`; 
+    // Обновление скрытых полей при выборе области
+    document.getElementById('area').addEventListener('change', function() {
+        document.getElementById('selected-area').value = this.value;
+    });
 
-        // Form submission handler
-        document.getElementById("dataForm").addEventListener("submit", async function(e) {
+    // Form submission handler
+    document.getElementById("dataForm").addEventListener("submit", async function(e) {
         e.preventDefault();  // Prevent default form submission
 
-        // Get input values
-        const name = localStorage.getItem('userName') || 'defaultName';
-        const age = localStorage.getItem('userAge') || 'defaultAge';
-        const area = document.getElementById('selected-area').value;
-        const time = document.getElementById('selected-time').value;
+    // Get input values
+    const name = localStorage.getItem('userName') || 'defaultName';
+    const age = localStorage.getItem('userAge') || 'defaultAge';
+    const area = document.getElementById('selected-area').value;
+    const time = document.getElementById('selected-time').value;
 
-        try {
-            const response = await fetch('http://localhost:3000/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, age, area, time })
-            });
+    // Проверка значений
+    if (!area || !time) {
+        console.error('Area or time is not selected.');
+        return;
+    }
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+    try {
+        const response = await fetch('http://localhost:3000/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, age, area, time })
+        });
 
-            const result = await response.json();
-            console.log(result);
-
-        } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    });
+
+        const result = await response.json();
+        console.log(result);
+
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+});
+
 
     </script>
 </body>

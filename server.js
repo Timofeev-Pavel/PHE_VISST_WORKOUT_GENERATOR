@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Используем PORT из окружения или 3000 по умолчанию
 
 // MongoDB connection URI
-const uri = process.env.MONGODB_URI;
+const uri = 'mongodb+srv://pavtim127:<n3oxzz1542>@cluster0.alxle.mongodb.net/';
 
 if (!uri) {
     console.error('MongoDB URI не установлен');
