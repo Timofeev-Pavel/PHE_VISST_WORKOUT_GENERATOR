@@ -22,14 +22,12 @@
             <h1>Workout Generator</h1>
         </header>
 
-        <!-- Hidden inputs to store selected area and time -->
         <input type="hidden" id="selected-area" name="area">
         <input type="hidden" id="selected-time" name="time">
 
         <main>
             <h2>Customize Your Workout</h2>
 
-            <!-- Time selection dropdown -->
             <label for="time">How much time do you have?</label>
             <select id="time">
                 <option value="5">5 min</option>
@@ -40,7 +38,6 @@
 
             <br>
 
-            <!-- Area selection dropdown -->
             <label for="area">Which area to improve?</label>
             <select id="area">
                 <option value="cardio">Cardio</option>
@@ -50,15 +47,12 @@
 
             <br><br>
 
-            <!-- Generate Workout button -->
             <button onclick="generateWorkout()">Generate Workout</button>
 
-            <!-- Workout list placeholder -->
             <div id="workout" class="workout-list"></div>
 
             <br><br>
 
-            <!-- Form to submit data -->
             <form id="dataForm">
                 <button class="finish-button" type="submit" id="submitBtn">Finish Workout</button>
             </form>
@@ -71,21 +65,21 @@
 
     <script src="workoutGenerator.js"></script>
     <script>
-        // Обновление скрытых полей при выборе времени
+        
     document.getElementById('time').addEventListener('change', function() {
         document.getElementById('selected-time').value = this.value;
     });
 
-    // Обновление скрытых полей при выборе области
+    
     document.getElementById('area').addEventListener('change', function() {
         document.getElementById('selected-area').value = this.value;
     });
 
-    // Form submission handler
-    document.getElementById("dataForm").addEventListener("submit", async function(e) {
-        e.preventDefault();  // Prevent default form submission
 
-        // Get input values
+    document.getElementById("dataForm").addEventListener("submit", async function(e) {
+        e.preventDefault();  
+
+
         const name = localStorage.getItem('userName') || 'defaultName';
         const age = localStorage.getItem('userAge') || 'defaultAge';
         const area = document.getElementById('selected-area').value;

@@ -3,7 +3,7 @@ function generateWorkout() {
     const area = document.getElementById('area').value;
     const workoutList = document.getElementById('workout');
 
-    // Определение репозитория тренировок
+
     const WORKOUT_REPOSITORY = {
         cardio: {
             5: [
@@ -70,7 +70,6 @@ function generateWorkout() {
         }
     };
 
-    // Проверяем, существует ли выбранная область и время в репозитории
     if (!WORKOUT_REPOSITORY[area] || !WORKOUT_REPOSITORY[area][time]) {
         workoutList.innerHTML = `<p>No workout found for ${area} with ${time} minutes. Please try another combination.</p>`;
         return;
@@ -78,10 +77,10 @@ function generateWorkout() {
 
     const selectedWorkouts = WORKOUT_REPOSITORY[area][time];
 
-    // Очищаем предыдущий список упражнений
+
     workoutList.innerHTML = `<h3>Workout for ${time} minutes (${area} focus)</h3>`;
 
-    // Динамически создаем список упражнений
+
     const workoutItems = selectedWorkouts.map(exercise => `
         <p>
             <label>
@@ -93,23 +92,19 @@ function generateWorkout() {
 
     workoutList.innerHTML += workoutItems;
 
-    // Сохраняем выбранные область и время в скрытые поля
+
     document.getElementById('selected-area').value = area;
     document.getElementById('selected-time').value = time;
 
-    // Функция для проверки, отмечены ли все чекбоксы
     function checkAllChecked() {
         const checkboxes = document.querySelectorAll('input[type="checkbox"][name="workout"]');
         const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
         document.getElementById("submitBtn").style.display = allChecked ? "inline-block" : "none";
     }
-
-    // Добавляем обработчики событий для всех чекбоксов
     const checkboxes = document.querySelectorAll('input[type="checkbox"][name="workout"]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', checkAllChecked);
     });
 
-    // Убираем кнопку "Finish Workout" до тех пор, пока все чекбоксы не будут отмечены
     document.getElementById("submitBtn").style.display = "none";
 }

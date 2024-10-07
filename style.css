@@ -28,7 +28,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 500px; /* Adjusted for a cozier look */
+    max-width: 500px; 
     width: 100%;
     text-align: center;
     padding: 20px;
@@ -54,7 +54,7 @@ header .logo img {
 }
 
 header h1 {
-    font-size: 1.8rem; /* Slightly smaller for a cozier look */
+    font-size: 1.8rem; 
     margin: 0;
     position: absolute;
     left: 50%;
@@ -80,12 +80,12 @@ label {
 input[type="text"],
 input[type="number"],
 select {
-    width: calc(100% - 22px); /* Adjusted width for better fit */
+    width: calc(100% - 22px); 
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-bottom: 15px; /* Space between fields */
+    margin-bottom: 15px; 
 }
 
 button {
@@ -170,7 +170,7 @@ footer {
 
 .personal-info-form button {
     width: 100%;
-    max-width: 200px; /* Center button and control size */
+    max-width: 200px; 
     margin-top: 10px;
 }
 
@@ -208,12 +208,12 @@ footer {
 
 .welcome-container input[type="text"],
 .welcome-container input[type="number"] {
-    width: calc(100% - 22px); /* Adjusted width for better fit */
+    width: calc(100% - 22px);
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-bottom: 15px; /* Space between fields */
+    margin-bottom: 15px; 
 }
 
 .welcome-container button {
@@ -262,7 +262,7 @@ body p {
     padding: 20px;
     max-width: 500px;
     width: 100%;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto; 
     text-align: center;
 }
 
@@ -279,11 +279,11 @@ button {
     margin: 10px 0;
 }
 .generate-button {
-    margin-bottom: 10px; /* Пространство под кнопкой Generate Workout */
+    margin-bottom: 10px;
 }
 
 .finish-button {
-    margin-top: 10px; /* Пространство над кнопкой Finish Workout */
+    margin-top: 10px; 
 }
 
 
@@ -305,7 +305,7 @@ button:hover {
     margin-bottom: 20px;
     text-align: center;
     max-width: 400px;
-    margin: 0 auto; /* Center the text */
+    margin: 0 auto; 
 }
 
 /* Styling for highlighted text */
