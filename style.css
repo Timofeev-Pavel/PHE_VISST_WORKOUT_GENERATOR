@@ -16,7 +16,12 @@ body {
     height: 100vh;
     margin: 0;
 }
-
+.action-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /* Styling for the container */
 .container {
     background-color: white;
@@ -99,6 +104,14 @@ button:hover {
 }
 
 /* Workout list styling */
+.workout-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
 .workout-list ul {
     list-style-type: none;
     padding: 0;
@@ -216,4 +229,86 @@ footer {
 
 .welcome-container button:hover {
     background-color: #5a05c8;
+}
+
+/* Styling for the farewell page */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Paragraph styling */
+body p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+/*farewell page styling */
+
+/* Styling for the farewell container */
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+    text-align: center;
+}
+
+
+button {
+    background-color: #6706e9;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+.generate-button {
+    margin-bottom: 10px; /* Пространство под кнопкой Generate Workout */
+}
+
+.finish-button {
+    margin-top: 10px; /* Пространство над кнопкой Finish Workout */
+}
+
+
+button:hover {
+    background-color: #5a05c8;
+}
+/* Farewell page header */
+.farewell-header {
+    font-size: 1.8rem;
+    color: #6706e9;
+    margin-bottom: 20px;
+}
+
+/* Farewell text styling */
+.farewell-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto; /* Center the text */
+}
+
+/* Styling for highlighted text */
+.farewell-text strong {
+    color: #6706e9;
 }
