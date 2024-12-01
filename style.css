@@ -102,6 +102,13 @@ button {
 button:hover {
     background-color: #5a05c8;
 }
+p.superset-instruction {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: center;
+    color: #333;
+}
 
 /* Workout list styling */
 .workout-list {

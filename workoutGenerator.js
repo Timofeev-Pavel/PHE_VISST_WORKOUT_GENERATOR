@@ -8,64 +8,64 @@ function generateWorkout() {
         cardio: {
             5: [
                 { name: 'Jumping Jacks', link: 'https://youtu.be/c4DAnQ6DtF8?si=OPcg8EySRkOBB-4Q', reps: '2 sets of 20' },
-                { name: 'Running in Place', link: 'https://youtu.be/eBQAa9dEalY?si=UuFFqYO8iS3IEk-4', reps: '3 minutes' },
+                { name: 'Running in Place', link: 'https://youtu.be/eBQAa9dEalY?si=UuFFqYO8iS3IEk-4', reps: '2 sets of 1 minute each' },
             ],
             10: [
-                { name: 'Jumping Jacks', link: 'https://youtu.be/c4DAnQ6DtF8?si=OPcg8EySRkOBB-4Q', reps: '3 sets of 20' },
-                { name: 'Running in Place', link: 'https://youtu.be/eBQAa9dEalY?si=UuFFqYO8iS3IEk-4', reps: '5 minutes' },
+                { name: 'High Knees', link: 'https://www.youtube.com/watch?v=ZNDHivUg7vA', reps: '3 sets of 1 minute each' },
+                { name: 'Butt Kicks', link: 'https://www.youtube.com/watch?v=e4cnI7eVKRw', reps: '3 sets of 1 minutes each' },
                 { name: 'Burpees', link: 'https://youtu.be/auBLPXO8Fww?si=HDkZjPGPbxTVRuaX', reps: '2 sets of 10' }
             ],
             15: [
-                { name: 'Jumping Jacks', link: 'https://youtu.be/c4DAnQ6DtF8?si=OPcg8EySRkOBB-4Q', reps: '4 sets of 20' },
-                { name: 'Running in Place', link: 'https://youtu.be/eBQAa9dEalY?si=UuFFqYO8iS3IEk-4', reps: '7 minutes' },
+                { name: 'Star Jumps', link: 'https://www.youtube.com/watch?v=VVEO_J1tIXU', reps: '3 sets of 20' },
+                { name: 'Fast Feet', link: 'https://www.youtube.com/shorts/OwlOOHHLHMs', reps: '3 sets of 2 minutes each' },
                 { name: 'Burpees', link: 'https://youtu.be/auBLPXO8Fww?si=HDkZjPGPbxTVRuaX', reps: '3 sets of 10' }
             ],
             30: [
-                { name: 'Jumping Jacks', link: 'https://youtu.be/c4DAnQ6DtF8?si=OPcg8EySRkOBB-4Q', reps: '5 sets of 30' },
-                { name: 'Running in Place', link: 'https://youtu.be/eBQAa9dEalY?si=UuFFqYO8iS3IEk-4', reps: '15 minutes' },
-                { name: 'Burpees', link: 'https://youtu.be/auBLPXO8Fww?si=HDkZjPGPbxTVRuaX', reps: '4 sets of 12' }
+                { name: 'Mountain Climbers', link: 'https://www.youtube.com/watch?v=kLh-uczlPLg', reps: '8 sets of 1 minute each' },
+                { name: 'Tuck Jumps', link: 'https://www.youtube.com/watch?v=Yl7tEmpzknY', reps: '8 sets of 20' },
+                { name: 'Burpees', link: 'https://youtu.be/auBLPXO8Fww?si=HDkZjPGPbxTVRuaX', reps: '7 sets of 12' }
             ]
         },
         upperbody: {
             5: [
-                { name: 'Push-ups', link: 'https://youtu.be/ba8tr1NzwXU?si=pfle36LdFJ0iiqv6', reps: '2 sets of 10' },
-                { name: 'Pull-Ups', link: 'https://youtu.be/ZPG8OsHKXLw?si=f3DzUa1L3cOR4xRQ', reps: '2 sets of 5' }
+                { name: 'Push-ups', link: 'https://youtu.be/ba8tr1NzwXU?si=pfle36LdFJ0iiqv6', reps: '2 sets of 15' },
+                { name: 'Plank', link: 'https://www.youtube.com/watch?v=pvIjsG5Svck', reps: '2 sets of 1 minute' }
             ],
             10: [
                 { name: 'Push-ups', link: 'https://youtu.be/ba8tr1NzwXU?si=pfle36LdFJ0iiqv6', reps: '3 sets of 15' },
-                { name: 'Pull-Ups', link: 'https://youtu.be/ZPG8OsHKXLw?si=f3DzUa1L3cOR4xRQ', reps: '3 sets of 5' },
-                { name: 'Tricep Dips', link: 'https://youtu.be/Gz8NkGoNPkc?si=n7vvyFpfN5qwg7Vy', reps: '2 sets of 15' }
+                { name: 'Wall Angels', link: 'https://www.youtube.com/watch?v=1UU4VvklQ44', reps: '3 sets of 20' },
+                { name: 'Chair Dips', link: 'https://www.youtube.com/watch?v=HCf97NPYeGY', reps: '2 sets of 10' }
             ],
             15: [
                 { name: 'Push-ups', link: 'https://youtu.be/ba8tr1NzwXU?si=pfle36LdFJ0iiqv6', reps: '4 sets of 15' },
-                { name: 'Pull-Ups', link: 'https://youtu.be/ZPG8OsHKXLw?si=f3DzUa1L3cOR4xRQ', reps: '4 sets of 5' },
-                { name: 'Tricep Dips', link: 'https://youtu.be/Gz8NkGoNPkc?si=n7vvyFpfN5qwg7Vy', reps: '3 sets of 15' }
+                { name: 'Dead Bug', link: 'https://www.youtube.com/shorts/HrxOWhPdsOY', reps: '4 sets of 10' },
+                { name: 'Tricep Extensions', link: 'https://www.youtube.com/watch?v=ACyLmO9wj98', reps: '4 sets of 10' }
             ],
             30: [
-                { name: 'Push-ups', link: 'https://youtu.be/ba8tr1NzwXU?si=pfle36LdFJ0iiqv6', reps: '6 sets of 15' },
-                { name: 'Pull-Ups', link: 'https://youtu.be/ZPG8OsHKXLw?si=f3DzUa1L3cOR4xRQ', reps: '5 sets of 5' },
-                { name: 'Tricep Dips', link: 'https://youtu.be/Gz8NkGoNPkc?si=n7vvyFpfN5qwg7Vy', reps: '5 sets of 15' }
+                { name: 'Push-ups', link: 'https://youtu.be/ba8tr1NzwXU?si=pfle36LdFJ0iiqv6', reps: '8 sets of 15' },
+                { name: 'Superman Exercise', link: 'https://www.youtube.com/shorts/KTWWh3GsyYw', reps: '8 sets of 10' },
+                { name: 'Tricep Dips', link: 'https://youtu.be/Gz8NkGoNPkc?si=n7vvyFpfN5qwg7Vy', reps: '7 sets of 10' }
             ]
         },
         lowerbody: {
             5: [
                 { name: 'Squats', link: 'https://youtu.be/m0GcZ24pK6k?si=EJguC_nroV92Wl5u', reps: '2 sets of 15' },
-                { name: 'Lunges', link: 'https://youtu.be/MxfTNXSFiYI?si=vH_nT1dv4HmpliNf', reps: '2 sets of 10 (each leg)' }
+                { name: 'Lunges', link: 'https://youtu.be/MxfTNXSFiYI?si=vH_nT1dv4HmpliNf', reps: '2 sets of 15 (each leg)' }
             ],
             10: [
-                { name: 'Squats', link: 'https://youtu.be/m0GcZ24pK6k?si=EJguC_nroV92Wl5u', reps: '3 sets of 20' },
-                { name: 'Lunges', link: 'https://youtu.be/MxfTNXSFiYI?si=vH_nT1dv4HmpliNf', reps: '3 sets of 15 (each leg)' },
-                { name: 'Calf Raises', link: 'https://youtu.be/eMTy3qylqnE?si=y52Ia4A_M7PACj0g', reps: '2 sets of 20' }
+                { name: 'Squats', link: 'https://youtu.be/m0GcZ24pK6k?si=EJguC_nroV92Wl5u', reps: '3 sets of 15' },
+                { name: 'Reverse Lunges', link: 'https://www.youtube.com/watch?v=Ry-wqegeKlE', reps: '3 sets of 15 (each leg)' },
+                { name: 'Lateral Step-Ups', link: 'https://www.youtube.com/watch?v=XYoLTmcr2oA', reps: '2 sets of 15 (each leg)' }
             ],
             15: [
-                { name: 'Squats', link: 'https://youtu.be/m0GcZ24pK6k?si=EJguC_nroV92Wl5u', reps: '4 sets of 20' },
-                { name: 'Lunges', link: 'https://youtu.be/MxfTNXSFiYI?si=vH_nT1dv4HmpliNf', reps: '4 sets of 20 (each leg)' },
-                { name: 'Calf Raises', link: 'https://youtu.be/eMTy3qylqnE?si=y52Ia4A_M7PACj0g', reps: '3 sets of 25' }
+                { name: 'Squats', link: 'https://youtu.be/m0GcZ24pK6k?si=EJguC_nroV92Wl5u', reps: '4 sets of 15' },
+                { name: 'Side Lunges', link: 'https://www.youtube.com/watch?v=rvqLVxYqEvo', reps: '4 sets of 15 (each leg)' },
+                { name: 'Calf Raises', link: 'https://youtu.be/eMTy3qylqnE?si=y52Ia4A_M7PACj0g', reps: '4 sets of 25' }
             ],
             30: [
-                { name: 'Squats', link: 'https://youtu.be/m0GcZ24pK6k?si=EJguC_nroV92Wl5u', reps: '6 sets of 25' },
-                { name: 'Lunges', link: 'https://youtu.be/MxfTNXSFiYI?si=vH_nT1dv4HmpliNf', reps: '6 sets of 20 (each leg)' },
-                { name: 'Calf Raises', link: 'https://youtu.be/eMTy3qylqnE?si=y52Ia4A_M7PACj0g', reps: '4 sets of 30' }
+                { name: 'Squats', link: 'https://youtu.be/m0GcZ24pK6k?si=EJguC_nroV92Wl5u', reps: '8 sets of 15' },
+                { name: 'Bulgarian Split Squats', link: 'https://www.youtube.com/shorts/uODWo4YqbT8', reps: '8 sets of 10 (each leg)' },
+                { name: 'Broad Jumps', link: 'https://www.youtube.com/watch?v=c6Etg7bpFfI', reps: '7 sets of 10' }
             ]
         }
     };
@@ -91,7 +91,7 @@ function generateWorkout() {
     `).join('');
 
     workoutList.innerHTML += workoutItems;
-
+    workoutList.innerHTML += `<p class="superset-instruction">Complete all exercises in a superset, take a 1-minute break, and then repeat the set.</p>`;
 
     document.getElementById('selected-area').value = area;
     document.getElementById('selected-time').value = time;
